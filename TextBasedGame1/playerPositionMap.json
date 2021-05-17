@@ -1,0 +1,15 @@
+[
+  {
+    "name": "outside",
+    "positions": [
+      "Down the path",
+      "Infront of the door"
+    ]
+  },
+  {
+    "name": "first room",
+    "positions": [
+      "entrance"
+    ]
+  }
+]
