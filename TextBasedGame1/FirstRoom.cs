@@ -1,46 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static TextBasedGame1.ConsoleInputOutput;
+using static TextBasedGame1.InputOutput;
 
 namespace TextBasedGame1
 {
-    class FirstRoom
+    class FirstRoom : Room
     {
-        public Boolean knife;
+        public bool knife;
 
         public FirstRoom()
         {
             knife = true;
         }
 
-        public void RunRoom(ref Player player)
+        public override void RunRoom(ref Player player)
         {
             switch (player.position)
             {
                 case 0:
-                    InfrontOfDoorPosition(ref player);
+                    InsideOfDoorPosition(ref player);
+                    break;
+                default:
                     break;
             }
         }
 
-        private void InfrontOfDoorPosition(ref Player player)
+        private void InsideOfDoorPosition(ref Player player)
         {
-            if (knife)
-            {
-                PrintNew("You see a dagger infront of you :)");
-                if (RecieveYesNo("Pick it up?"))
-                {
-                    PrintNew("You recieve a dagger.");
-                    player.inventory.Add("dagger");
-                    knife = false;
-                }
-            }
-            else
-            {
-                PrintNew("knife gone :(");
-                Console.ReadLine();
-            }
+            
         }
     }
 }

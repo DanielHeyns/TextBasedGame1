@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<game>
+	<gamestart>
+		In a world filled with magic, miracles are a daily occurence. However, striken with the unfortunate curse of being human, magic does not come to you. No, for you, life could not be so simple. An adventurer at heart, you find your miracles elsewhere.
+	</gamestart>
+	<rooms>
+		<outside>
+			<downthepath>
+				<description>
+					The house looms before you, a simple structure of wood supported by a primitive stone foundation. A fixture of earlier centuries, harboring mysteries you can't even imagine.
+				</description>
+				<thepond>
+					A warm summer sun glistens atop the rippling waters of a clear pond.
+				</thepond>
+				<callout>
+					Your voice carries through the canopy, but your echo is all you hear.
+				</callout>
+				<leave>
+					You decide it isn't worth your time, and go home.
+				</leave>
+			</downthepath>
+			<infrontofdoor>
+				<description>
+					You arrive at a battered wooden door, the only entrance you can see into the shack.
+				</description>
+				<examinethedoor>
+					The door is made of withered oak. After careful studying you find an inscription carved into the door handle, "Relinquish the life of one who lived but a moment ago."
+				</examinethedoor>
+				<searcharoundthehouse>
+					Circling the small building you find a blackened window.
+				</searcharoundthehouse>
+				<tryhandle>
+					The handle does not budge.
+				</tryhandle>
+				<kickdoor>
+					A loud wooden thud breaks the silence for a moment. The door is stronger than it looks.
+				</kickdoor>
+				<drivespearintochest>
+					You plunge the makeshift spear into your heart with all the force you can muster. As your blood spills forth it stains the door and drips across the handle. A satisfying click registers on your ears before your world plunges into darkness. The door opens.
+				</drivespearintochest>
+				<pourthefishbloodonhandle>
+					The fish wriggles in your hands as its body offers the final evidence of its being. Blood drips across the handle. The lock clicks. The door opens.
+				</pourthefishbloodonhandle>
+			</infrontofdoor>
+			<window>
+				<description>
+					Dark paint has been smeared, tinting the inside of this lonely square of glass. Weather has worn and cracked the surrounding wooden frame. You think you may be able to tear a portion of it free.
+				</description>
+				<tearoffwood>
+					Gripping a large piece of split wood, with a firm tug you wrench it free. You receive a makeshift spear.
+				</tearoffwood>
+				<punchwindow>
+					Your hand recoils from the pain, a numbness fills your arm. The window remains.
+				</punchwindow>
+				<breakwindowwithrock>
+					The rock crashes through the blackened glass revealing an even darker interior. Musty scents assault your nose as a billow of dust rushes to the fresh air. 
+				</breakwindowwithrock>
+			</window>
+		</outside>
+		<firstroom>
+		
+		</firstroom>
+	</rooms>
+</game>

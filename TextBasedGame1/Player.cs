@@ -25,8 +25,8 @@ namespace TextBasedGame1
         {
             this.name = name;
             inventory = new List<string>();
-            position = 0;
             room = 0;
+            position = 0;
         }
 
     }
