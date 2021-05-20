@@ -93,7 +93,7 @@ namespace TextBasedGame1
                 case 4:
                     PrintNewPause(readFromScript("/game/rooms/outside/infrontofthedoor/kickdoor"));
                     break;
-                case 5: //TODO when spear is gone, dying fish will be in position 5 in the options, but this case statement is static.
+                case 5: //TODO when spear is gone, dying fish will be in position 5 in the options, but this case statement is static. Can be fixed by tying the case to the first word in the options, and then checking the options list at index corresponding to chosen by player.
                         //After you fix this, implement from the script xml.
                     if (player.inventory.Contains("wooden spear"))
                     {
