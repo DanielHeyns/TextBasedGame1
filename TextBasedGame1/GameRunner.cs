@@ -18,7 +18,7 @@ namespace TextBasedGame1
             outside = new Outside();
             firstRoom = new FirstRoom();
 
-            PrintNew(readFromScript("/game/gamestart"));
+            PrintNew(ReadFromScript("/game/gamestart"));
 
             //game will run until killed.
             while (true)

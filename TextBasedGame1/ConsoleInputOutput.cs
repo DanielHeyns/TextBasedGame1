@@ -68,12 +68,17 @@ namespace TextBasedGame1
             }
         }
 
-        public static string readFromScript(string path)
+        public static string ReadFromScript(string path)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("../../../Script.xml");
             XmlNode node = doc.DocumentElement.SelectSingleNode(path);
             return node.InnerText.Trim();
+        }
+
+        public static string GetFirstWord(string sentence)
+        {
+            return sentence.Split()[0];
         }
 
     }

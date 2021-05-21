@@ -38,6 +38,7 @@ namespace TextBasedGame1
                     break;
                 case 2:
                     ByTheWindow(ref player);
+                    break;
 
                 default:
                     break;
@@ -49,20 +50,20 @@ namespace TextBasedGame1
             string[] baseOptions = { "Walk towards the house.", "Examine the pond.", "Call out for anyone that may be nearby.", "Leave." };
             List<string> options = new List<string>();
             options.AddRange(baseOptions);
-            int chosenOption = ReceiveOptions(readFromScript("/game/rooms/outside/downthepath/description"), options);
+            int chosenOption = ReceiveOptions(ReadFromScript("/game/rooms/outside/downthepath/description"), options);
             switch (chosenOption)
             {
                 case 1:
                     player.position = 1;
                     break;
                 case 2:
-                    PrintNewPause(readFromScript("/game/rooms/outside/downthepath/thepond"));
+                    PrintNewPause(ReadFromScript("/game/rooms/outside/downthepath/thepond"));
                     break;
                 case 3:
-                    PrintNewPause(readFromScript("/game/rooms/outside/downthepath/callout"));
+                    PrintNewPause(ReadFromScript("/game/rooms/outside/downthepath/callout"));
                     break;
                 case 4:
-                    PrintNewPause(readFromScript("/game/rooms/outside/downthepath/leave"));
+                    PrintNewPause(ReadFromScript("/game/rooms/outside/downthepath/leave"));
                     Environment.Exit(1);
                     break;
 
@@ -73,38 +74,39 @@ namespace TextBasedGame1
         {
             string[] baseOptions = { "Examine door.", "Search around the house.", "Try the door handle.", "Kick the door."};
             List<string> options = new List<string>();
+            options.AddRange(baseOptions);
 
             if (player.inventory.Contains("wooden spear")) options.Add("Drive spear into own chest.");
             if (player.inventory.Contains("dying fish")) options.Add("Pour the dying fish's blood onto the door handle.");
 
-            int chosenOption = ReceiveOptions(readFromScript("/game/rooms/outside/infrontofthedoor/description"), options);
-            switch (chosenOption)
+            int chosenOption = ReceiveOptions(ReadFromScript("/game/rooms/outside/infrontofdoor/description"), options);
+            string chosenOptionWord = GetFirstWord(options[chosenOption-1]);
+            switch (chosenOptionWord)
             {
-                case 1:
-                    PrintNewPause(readFromScript("/game/rooms/outside/infrontofthedoor/examinethedoor"));
+                case "Examine":
+                    PrintNewPause(ReadFromScript("/game/rooms/outside/infrontofdoor/examinethedoor"));
                     break;
-                case 2:
-                    PrintNewPause(readFromScript("/game/rooms/outside/infrontofthedoor/searcharoundthehouse"));
+                case "Search":
+                    PrintNewPause(ReadFromScript("/game/rooms/outside/infrontofdoor/searcharoundthehouse"));
                     player.position = 2;
                     break;
-                case 3:
-                    PrintNewPause(readFromScript("/game/rooms/outside/infrontofthedoor/tryhandle"));
+                case "Try":
+                    PrintNewPause(ReadFromScript("/game/rooms/outside/infrontofdoor/tryhandle"));
                     break;
-                case 4:
-                    PrintNewPause(readFromScript("/game/rooms/outside/infrontofthedoor/kickdoor"));
+                case "Kick":
+                    PrintNewPause(ReadFromScript("/game/rooms/outside/infrontofdoor/kickdoor"));
                     break;
-                case 5: //TODO when spear is gone, dying fish will be in position 5 in the options, but this case statement is static. Can be fixed by tying the case to the first word in the options, and then checking the options list at index corresponding to chosen by player.
-                        //After you fix this, implement from the script xml.
+                case "Drive": 
                     if (player.inventory.Contains("wooden spear"))
                     {
-                        PrintNewPause(readFromScript("/game/rooms/outside/infrontofthedoor/drivespearintochest"));
+                        PrintNewPause(ReadFromScript("/game/rooms/outside/infrontofdoor/drivespearintochest"));
                         Environment.Exit(1);
                     }
                     break;
-                case 6:
+                case "Pour":
                     if (player.inventory.Contains("dying fish"))
                     {
-                        PrintNewPause(readFromScript("/game/rooms/outside/infrontofthedoor/pourthefishbloodonhandle"));
+                        PrintNewPause(ReadFromScript("/game/rooms/outside/infrontofdoor/pourthefishbloodonhandle"));
                         player.inventory.Remove("dying fish");
 
                     }

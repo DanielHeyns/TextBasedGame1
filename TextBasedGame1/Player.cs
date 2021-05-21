@@ -25,6 +25,9 @@ namespace TextBasedGame1
         {
             this.name = name;
             inventory = new List<string>();
+
+            inventory.Add("dying fish");
+
             room = 0;
             position = 0;
         }
